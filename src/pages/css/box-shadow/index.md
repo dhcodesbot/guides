@@ -1,60 +1,32 @@
 ---
 title: Box Shadow
 ---
-## Box Shadow
-The box-shadow property attaches one or more shadows to an element. 
-It's  an option that give you the power to easily design wonderful shadow effects.
+The box-shadow CSS property is used to add shadow effects around an element's frame. You can specify multiple effects separated by commas if you wish to do so. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
 
-### Syntax:
-```css
-  div {
-    box-shadow: none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
-    }
-  ```
-* #### inset 
-If not specified (default), the shadow is assumed to be a drop shadow (as if the box were raised above the content).
-The presence of the inset keyword changes the shadow to one inside the frame
+/* offset-x | offset-y | color */
+box-shadow: 60px -16px teal;
 
-* #### offset-x offset-y
-These are two <length> values to set the shadow offset. <offset-x> specifies the horizontal distance. Negative values place the shadow to the left of the element. <offset-y> specifies the vertical distance. Negative values place the shadow above the element. See <length> for possible units.
+/* offset-x | offset-y | blur-radius | color */
+box-shadow: 10px 5px 5px black;
 
-* #### blur-radius
-This is a third <length> value. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be 0 (the shadow's edge is sharp).
-  
-* #### spread-radius
-This is a fourth <length> value. Positive values will cause the shadow to expand and grow bigger, negative values will cause the shadow to shrink. If not specified, it will be 0 (the shadow will be the same size as the element).
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+/* inset | offset-x | offset-y | color */
+box-shadow: inset 5em 1em gold;
+
+/* Any number of shadows, separated by commas */
+box-shadow: 3px 3px red, -1em 0 0.4em olive;
+
+/* Global keywords */
+box-shadow: inherit;
+box-shadow: initial;
+box-shadow: unset;
+box-shadow: 60px -16px teal;box-shadow: 10px 5px 5px black;box-shadow: 3px 3px red, -1em 0 0.4em olive;box-shadow: inset 5em 1em gold;box-shadow: 0 0 1em gold;box-shadow: inset 0 0 1em gold;box-shadow: inset 0 0 1em gold, 0 0 1em red;
  
-* #### color 
-This is fifth value used to set shadow color
+The box-shadow property enables you to cast a drop shadow from the frame of almost any element. If a border-radius is specified on the element with a box shadow, the box shadow takes on the same rounded corners. The z-ordering of multiple box shadows is the same as multiple text shadows (the first specified shadow is on top).
 
-### Examples
-
-#### Basic use
-```css
-div {
-    width: 200px;
-    height: 50px;
-    background-color: #333;
-    box-shadow: 10px 10px 5px #ccc;
-}
-```
-10px - offset-x
-10px - offset-y
-5px -  blur
-#ccc - light gray color
-
-It will display
-
-![image](https://raw.githubusercontent.com/krzysiekh/images/master/box-shadow1.png)
-
-#### Inside box shadow
-```css
-div {
-    width: 200px;
-    height: 50px;
-    background-color: #333;
-    box-shadow: inset 10px 10px 5px #ccc;
-}
+Box-shadow generator is an interactive tool allowing you to generate a box-shadow.
 ```
 It uses very similar code, but with inset value, which displays shadow inside div element
 
